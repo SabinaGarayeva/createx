@@ -1,3 +1,3 @@
 export default function Blogs() {
-  return <h1>Blogs</h1>;
+  return <h1>Women</h1>;
 }

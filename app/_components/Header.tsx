@@ -1,12 +1,12 @@
 import Navigation from "@/app/_components/Navigation";
 import Logo from "@/app/_components/Logo";
+import TopBar from "./TopBar";
 
 function Header() {
   return (
     <header>
-      <div>
-        <Navigation />
-      </div>
+      <TopBar />
+      <Navigation />
     </header>
   );
 }
