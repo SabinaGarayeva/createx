@@ -3,12 +3,7 @@
 @tailwind utilities;
 
 
-@font-face {
-  font-family: 'CeraPro';
-  src: url('/fonts/cerapro-black.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 
 body {

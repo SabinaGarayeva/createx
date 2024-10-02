@@ -5,6 +5,9 @@ import type { Metadata } from "next";
 import Footer from "./_components/Footer";
 
 import Header from "./_components/Header";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "GreenShop",
@@ -18,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <header>
           <Header />
         </header>
