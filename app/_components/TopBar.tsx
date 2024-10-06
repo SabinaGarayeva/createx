@@ -3,7 +3,6 @@
 import Link from "next/link";
 import USA from "../../public/usaFlag.png";
 import Login from "../../public/loginIcon.svg";
-
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
@@ -11,11 +10,16 @@ export default function TopBar() {
   const pathname = usePathname();
 
   return (
-    <div className="bg-black w-100vh text-white flex mx-auto justify-between px-20">
-      <p>
-        Available 24/7 at <span>(405) 555-0128</span>
-      </p>
-      <ul className="flex gap-10">
+    <div className="text-gray-400 bg-gray-900 px-5 py-2 md:px-16 lg:px-16 xl:px-32 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+      {/* Left side: Phone number */}
+      <div className="text-center md:text-left">
+        <p className="text-sm md:text-xs lg:text-xs xl:text-sm">
+          Available 24/7 at <span>(405) 555-0128</span>
+        </p>
+      </div>
+
+      {/* Middle: Navigation links */}
+      <ul className="flex flex-wrap justify-center gap-5 md:gap-6 lg:gap-6 xl:gap-10 text-sm md:text-xs lg:text-xs xl:text-sm">
         <li>
           <Link href="/">Delivery & returns</Link>
         </li>
@@ -29,21 +33,30 @@ export default function TopBar() {
           <Link href="/">Contacts</Link>
         </li>
       </ul>
-      <div className="flex gap-5">
+
+      {/* Language and currency section */}
+      <div className="flex gap-5 items-center">
         <Image
           src={USA}
           alt="flag"
           quality={100}
           className="object-none"
-          width="35"
+          width="25"
+          height="25"
         />
-        <p>Eng / $</p>
+        <p className="text-sm md:text-xs lg:text-xs xl:text-sm">Eng / $</p>
       </div>
-      <div className="flex gap-4">
-        <Image src={Login} alt="login icon" />
-        <button>Log in</button>
-        <p>/</p>
-        <button>Register</button>
+
+      {/* Login section */}
+      <div className="flex items-center gap-4">
+        <Image src={Login} alt="login icon" width="20" height="20" />
+        <Link href="/login" className="text-sm md:text-xs lg:text-xs xl:text-sm">
+          Log in
+        </Link>
+        <span>/</span>
+        <Link href="/register" className="text-sm md:text-xs lg:text-xs xl:text-sm">
+          Register
+        </Link>
       </div>
     </div>
   );
